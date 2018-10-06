@@ -1,12 +1,7 @@
 .close-panel{
     display: none;
 }
-.wrapper {
-    height: 100%;
-    display: table;
-    width: 100%;
-    text-align: center;
-  }
+/*======Boxes for layout position=====*/
 .boxes {
     display: table;
     width: 100%;
@@ -32,17 +27,10 @@
   }
   .box-flex-layer-closed{
     min-width: 60%;
-    max-width: 95%;
-    flex: 0 0 95%;
-}
-.box-flex-icon{
-    width: 100%;
-    margin-right: -15px;
+    max-width: 98%;
+    flex: 0 0 96%;
 }
 
-.box-flex-icon .icon-style{
-    margin:auto;
-}
   .box-flex-2{
     width: 350px;
 }
@@ -55,46 +43,39 @@
       width: 100%;
       margin-left: 15px;
   }
-
-  .table-responsive{
-    border-right: #333131 solid 0.2px;
-  }
-.box-cell1{
-    max-width: 93%;
-    min-width: 60%;
+  .box-flex-icon{
+    width: 100%;
+    margin-right: -15px;
 }
 
+.box-flex-icon .icon-style{
+    margin:28px;
+    width: 30px;
+}
+/*======Boxes for layout position=====*/
 .panel-btn-show{
     width:50px;
     height: 95vh;
     text-align: center;
     font-size: 20px;
+    margin-left:-15px;
    
 }
-.panel-doc-show{
-    width: 95%;
-    
-}
+
 .panel-btn-show .header-doc-style{
-    width: 50px;
-    
+    width: 100%;
+    padding-left: 10px;
+    border: none;
+    margin-right: 5px
 }
 .panel-btn-show .icon-style{
     width: 30px;
-    margin-right: 20px;
-    margin-left: 5px;
+  
 }
 .panel-layer-show{
     width:50px;
-    
     text-align: center;
     font-size: 20px;
-}
-
-.panel-layer-show .icon-style{
-    width: 30px;
-    margin-right: 20px;
-    margin-left: 5px;
 }
 .header-doc-style{
     color:#fff;
@@ -103,7 +84,7 @@
     align-items: center;
     align-content: center;
     height: 40px;
-    border-left:  solid #333131 0.2px
+    
 
 }
 .header-doc-style a{
@@ -117,14 +98,23 @@
     background-color: rgb(56,56,56);
     text-align: center;
     font-size: 16px;
-    border: 0.2px #fff solid
+    border: 0.2px #fff solid;
+    width: 30px;
 }
+
 /*===Style Body component DocumentEditor ======*/
 
 .body-doc-style{
     color: #ffff;
     background-color: #000000!important;
     height: 540px;
+    border: solid #333131 0.2px
+}
+.body-doc-style-custom{
+    height: 669px;
+    background-color: #ffff;
+    background-color: #000000!important;
+  
     border: solid #333131 0.2px
 }
 /*=== end Style Body component DocumentEditor ======*/
@@ -196,7 +186,8 @@
    
 }
 .table-pag-list tbody{
-    height: 304px;
+    height: 300px;
+    
 }
 .fixed_header{
     width: 100%; 
@@ -257,6 +248,9 @@
     overflow: auto;
     color: #fff
     
+}
+.body-layer-custom{
+    height: 360px!important
 }
 /*===end Style compenent LayerSearch=====*/
 /*===Custom input text component LayerSearch===*/
@@ -355,10 +349,16 @@
 
 
 }
+/*fixe positon for the icon */
+.icon-add-info{
+    position: absolute;
+    right: 5px;
+}
+/*calc the height from additional Information componet */
 .warp-add{
-    height: calc(100% - 690px);
-    height: -webkit-calc(100% - 690px);  /* para Chrome */
-    height: -moz-calc(100% - 690px);
+    height: calc(100% - 620px);
+    height: -webkit-calc(100% - 620px);  /* para Chrome */
+    height: -moz-calc(100% - 620px);
     
 }
 

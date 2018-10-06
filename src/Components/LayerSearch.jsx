@@ -16,7 +16,7 @@ class LayerSearch extends Component {
         <div class="row header-doc-style ">
         <div class="col-2 " >
         <div class="icon-style">
-                         <FontAwesomeIcon icon={faAngleRight} onClick={this.props.showLayer} />
+                         <FontAwesomeIcon icon={faAngleRight} onClick={(e)=>this.props.showLayer(e)} />
                          </div>
          </div>
         <div class="col-10 " >
@@ -33,7 +33,7 @@ class LayerSearch extends Component {
          </div>
          </div>
          <div class="row">
-         <div class="col-12 body-layer" >
+         <div class={this.props.addInfoShow?"col-12 body-layer":"col-12 body-layer body-layer-custom"} >
          <input type="text" id="txtSearch" name="txtSearch" value="Search page text in request.."/>
          
          <label class="custom-input">Search all documents under the curent stack 

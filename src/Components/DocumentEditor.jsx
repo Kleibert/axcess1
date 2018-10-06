@@ -47,7 +47,7 @@ class DocumentEditor extends Component {
          </div>
          </div>
          <div class="row">
-         <div class="col-12 body-doc-style">
+         <div class={this.props.addInfoShow?"col-12 body-doc-style":"col-12 body-doc-style-custom"}> 
          pdf pdfd
          </div>
         </div>
