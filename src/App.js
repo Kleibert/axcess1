@@ -1,25 +1,38 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Navbar from './Components/Navbar';
+import DocumentList from './Components/DocumentList';
+
 import './App.css';
 
 class App extends Component {
+state ={
+  h :''
+}
+  componentDidMount(){
+    window.addEventListener("load", (e)=>this.handlOnload())
+  this.size();
+  }
+size=() =>{
+
+  window.addEventListener("resize",(e)=>{this.setState({
+    h:document.documentElement.clientHeight - 58 })});
+}
+handlOnload=()=>{
+  this.setState({
+    h:document.documentElement.clientHeight - 58 })
+}
   render() {
+   
+    
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+     
+      <Navbar />
+      <div class="container-fluid">
+        <div class="row">
+         <DocumentList/>
+        </div>
+      </div>
       </div>
     );
   }
