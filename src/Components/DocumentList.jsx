@@ -75,8 +75,8 @@ class DocumentList
         })
     }
      }
-     handlShowLayer(e)
-     {e.preventDefault();
+     handlShowLayer()
+     {
         
             this.setState({
                 showLayerSearch:!this.state.showLayerSearch
@@ -87,8 +87,8 @@ class DocumentList
         console.log("taminha da tela",document.documentElement.clientHeight)
         return (
          <div class="container-fluid">
-         <div class="row h-100" >
-            <div class={!this.state.show?"panel-btn-show":"close-panel"} >
+         <div class="box-flex" >
+            <div class={!this.state.show?"panel-btn-show box":"close-panel"} >
             
             <div class="header-doc-style">
            
@@ -98,22 +98,20 @@ class DocumentList
                       </div>
              
              </div>
-        <div class={this.state.show?"col-3":"close-panel"}>
+        <div class={this.state.show?"box box1":"close-panel"}>
                     <div class="row header-doc-style">
+                       
                         <div class="col-10" >
-                        
-                            <p>Request Documents and pages</p>
+                             <p>Request Documents and pages</p>
                         </div>
-                        <div class="col-2 " >
+                        <div class="col-2" >
                             <div class="icon-style">
                             <FontAwesomeIcon icon={faAngleLeft} onClick={this.handlShow} />
                             </div>
                         </div>
+
                     </div>
-                
-            
-                
-                            <div class="row row-style">
+                          <div class="row row-style">
                                 <div class="col-4">
                                     <div class="aling-text"></div>
                                         <p>Document List</p>
@@ -160,26 +158,39 @@ class DocumentList
                             </div>
                             <PageList pagelist={this.state.pages} counter={this.state.counter}/>
          </div> 
-            <div class={!this.state.show?"panel-doc-show":"col-9"}>
-                    <div class="row" >
-                        <div class={!this.state.show?"col-9":"col-8"}>
-                        <DocumentEditor showItems={this.state.show} />
-                        </div>
-                        <div class={this.state.show?"col-4":"col-3"}>
-                        <Layer showLayer={this.handlShowLayer} sitedata={this.state.class}/>
-                        </div>
-                    </div>
-                    <div class="warp-add ">
-                    <div class="row h-100">
-                    <div class="col-12">
-                    <AddInformation />
-                    </div>
-                    </div>
-                    </div>
-            </div>
-            </div>
+            <div class="box box2">
             
+                   <div class="boxes">
+                                   <div class="boxes-row"> 
+                                   <div class="box-flex">
+
+                                                <div class={this.state.showLayerSearch?"box-flex-1":"box-flex-layer-closed"}>
+                                <DocumentEditor showItems={this.state.show} />
+                                                 </div>
+                                                 {this.state.showLayerSearch?
+                                                 <div class="box-flex-2">
+                                <Layer showLayer={this.handlShowLayer} sitedata={this.state.class}/>
+                                                </div>: 
+                                               <div class="box-flex-icon">
+                                               <div class="header-doc-style">
+                                                <div class="icon-style">
+                                                 <FontAwesomeIcon icon={faAngleLeft} onClick={this.showLayerSearch} />
+                                                 </div>
+                                              </div>
+                                              </div>}
+                                     
+                                </div>           
+                                </div> 
+                                <div class="boxes-row warp-add "> 
+                                <div class="boxes">
+                            <AddInformation />
+                                </div>
+                            </div>
+                    </div>
+             
             </div>
+                                                
+            </div></div>
           );
     }
 }

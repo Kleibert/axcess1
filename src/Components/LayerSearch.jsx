@@ -16,7 +16,7 @@ class LayerSearch extends Component {
         <div class="row header-doc-style ">
         <div class="col-2 " >
         <div class="icon-style">
-                         <FontAwesomeIcon icon={faAngleRight} onClick={(e)=>this.props.showLayer(e)} />
+                         <FontAwesomeIcon icon={faAngleRight} onClick={this.props.showLayer} />
                          </div>
          </div>
         <div class="col-10 " >

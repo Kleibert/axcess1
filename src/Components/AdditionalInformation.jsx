@@ -4,9 +4,9 @@ class AdditionalInformation extends Component {
     
     render() { 
        
-        return ( <div class="h-100">
+        return ( <div class="boxes">
            
-            <div class="row">
+            <div class="row h-100">
              <div class="col-12 header-doc-style">
                     <ul class="nav nav-custom">
                         <li class="nav-item nav-item-active ">
@@ -38,7 +38,7 @@ class AdditionalInformation extends Component {
          </div>
          </div>
          <div class="row add-info h-100" >
-                 <div class="col-12" >
+                 <div class="col-12 h-100" >
                  
                  <div class="align-items-bottom">  
                          <button> Save</button>
