@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
-
+import { Document, Page } from 'react-pdf';
+import sample from '../static/sample.pdf'
 class DocumentEditor extends Component {
-    state = {  }
-    render() { 
+    state = {  numPages: null,
+              pageNumber: 1, 
+            }
+            onDocumentLoad = ({ numPages }) => {
+              this.setState({ numPages });
+            }
+    render() { console.log("pdf", sample)
         return (   
             <div>
         <div class="row">
@@ -48,7 +54,19 @@ class DocumentEditor extends Component {
          </div>
          <div class="row">
          <div class={this.props.addInfoShow?"col-12 body-doc-style":"col-12 body-doc-style-custom"}> 
-         pdf pdfd
+                <div>
+                <iframe src="http://gahp.net/wp-content/uploads/2017/09/sample.pdf"> 
+    
+    </iframe>
+                  <Document
+                    file="http://gahp.net/wp-content/uploads/2017/09/sample.pdf"
+                    onLoadSuccess={this.onDocumentLoad}
+                    error="tem um erro"
+                  >
+                    <Page pageNumber={this.state.pageNumber} />
+                  </Document>
+                  <p>Page {this.state.pageNumber} of {this.state.numPages}</p>
+                </div>
          </div>
         </div>
         
