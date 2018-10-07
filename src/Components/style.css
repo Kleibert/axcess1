@@ -117,6 +117,16 @@
   
     border: solid #333131 0.2px
 }
+.show-pdf{
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow:scroll
+
+}
 /*=== end Style Body component DocumentEditor ======*/
 
 .row-style{
@@ -139,6 +149,8 @@
     border-bottom: #333131 solid 0.2px;;
     background-color: rgb(83,83,83); 
 }
+
+
 /* custom select item component DocumentList */
 .select-style{
     border: none;
@@ -229,7 +241,7 @@
 }
 /* end css to fixe header from tables document list and page list */
 
-/*===Style compenent LayerSearch=====*/
+/*===Style component LayerSearch=====*/
 .col-layer{
     padding: 10px 10px;
     background-color:rgb(66,66,66);

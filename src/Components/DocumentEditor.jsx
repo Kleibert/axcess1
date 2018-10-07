@@ -54,18 +54,17 @@ class DocumentEditor extends Component {
          </div>
          <div class="row">
          <div class={this.props.addInfoShow?"col-12 body-doc-style":"col-12 body-doc-style-custom"}> 
-                <div>
-                <iframe src="http://gahp.net/wp-content/uploads/2017/09/sample.pdf"> 
-    
-    </iframe>
+                <div class ="show-pdf">
                   <Document
-                    file="http://gahp.net/wp-content/uploads/2017/09/sample.pdf"
+                    file={sample}
                     onLoadSuccess={this.onDocumentLoad}
-                    error="tem um erro"
+                    error="An error occurred!"
+                   
+
                   >
-                    <Page pageNumber={this.state.pageNumber} />
+                    <Page pageNumber={this.state.pageNumber} scale='0.6' />
                   </Document>
-                  <p>Page {this.state.pageNumber} of {this.state.numPages}</p>
+                  
                 </div>
          </div>
         </div>
