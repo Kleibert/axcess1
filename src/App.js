@@ -26,13 +26,14 @@ handlOnload=()=>{
     
     return (
       <div className="App">
-     
-      <Navbar />
-      <div class="container-fluid">
-        <div class="row">
-         <DocumentList/>
+       {/*Call top Menu Editor Zone1*/}
+          <Navbar />
+        <div class="container-fluid">
+          <div class="row">
+          {/*Call app from Document list*/}
+          <DocumentList/>
+          </div>
         </div>
-      </div>
       </div>
     );
   }

@@ -47,13 +47,11 @@ class AdditionalInformation extends Component {
          </div>
          <div class="row add-info h-100" >
                  <div class="col-12 h-100" >
-                 teste
                  <div class="align-items-bottom">  
                          <button> Save</button>
                          <button> Cancel</button>
                          <button> Timestamp</button>
-                     </div>
-                     
+                     </div> 
                 </div>
             </div>
             </div>

@@ -4,7 +4,7 @@ class Navbar extends Component {
     state = {  }
     render() { 
         return (
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-custom">
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
             <li class="nav-item dropdown active">

@@ -19,8 +19,8 @@ class  PageList extends Component  {
             </div>
             <div class="row row-table-page-list" >
                     
-                    <div class="table-responsive" >
-                    <Table responsive className="table-borderless fixed_header table-pag-list">
+                    
+                    <Table responsive hover className="table-borderless fixed_header table-pag-list">
                                 <thead>
                                 <tr>
                                 <th scope="col">Page </th>
@@ -42,7 +42,7 @@ class  PageList extends Component  {
                                                 )}
                                 </tbody>
                                 </Table>
-                                </div>
+                                
                      </div>
                      </div>
          );
