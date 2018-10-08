@@ -14,49 +14,31 @@ class DocumentList
          super(props);
 
     this.state = { 
-        rows:[
-            {name:'AD00012', dicolesure:'Not Reviewd',pages:'102',stack:'Expense Documents'},
-            {name:'AD00012', dicolesure:'Not Reviewd',pages:'102',stack:'Expense Documents'},
-            {name:'AD00012', dicolesure:'Not Reviewd',pages:'102',stack:'Expense Documents'},
-            {name:'AD00012', dicolesure:'Not Reviewd',pages:'102',stack:'Expense Documents'},
-            {name:'AD00012', dicolesure:'Not Reviewd',pages:'102',stack:'Expense Documents'},
-            {name:'AD00012', dicolesure:'Not Reviewd',pages:'102',stack:'Expense Documents'},
-            {name:'AD00012', dicolesure:'Not Reviewd',pages:'102',stack:'Expense Documents'},
-            {name:'AD00012', dicolesure:'Not Reviewd',pages:'102',stack:'Expense Documents'},
-            {name:'AD00012', dicolesure:'Not Reviewd',pages:'102',stack:'Expense Documents'},
-            {name:'AD00012', dicolesure:'Not Reviewd',pages:'102',stack:'Expense Documents'},
+        docs:[
+            {id:1,name:'AD00012', dicolesure:'Not Reviewd',pages:'102',stack:'Expense Documents',class:'selected'},
+            {id:2,name:'AD00012', dicolesure:'Not Reviewd',pages:'102',stack:'Expense Documents',class:''},
+            {id:3,name:'AD00012', dicolesure:'Not Reviewd',pages:'102',stack:'Expense Documents',class:''},
+            {id:4,name:'AD00012', dicolesure:'Not Reviewd',pages:'102',stack:'Expense Documents',class:''},
+            {id:5,name:'AD00012', dicolesure:'Not Reviewd',pages:'102',stack:'Expense Documents',class:''},
+            {id:6,name:'AD00012', dicolesure:'Not Reviewd',pages:'102',stack:'Expense Documents',class:''},
+            {id:7,name:'AD00012', dicolesure:'Not Reviewd',pages:'102',stack:'Expense Documents',class:''},
+            {id:8,name:'AD00012', dicolesure:'Not Reviewd',pages:'102',stack:'Expense Documents',class:''},
+            {id:9,name:'AD00012', dicolesure:'Not Reviewd',pages:'102',stack:'Expense Documents',class:''},
+            {id:10,name:'AD00012', dicolesure:'Not Reviewd',pages:'102',stack:'Expense Documents',class:''},
           
         ],
 
         pages:[
-            {pagination: '000006', dicolesure:'Partial',article:'10.13'},
-            {pagination: '000007', dicolesure:'Partial',article:'10'},
-            {pagination: '000006', dicolesure:'Partial',article:'1'},
-            {pagination: '000006', dicolesure:'Partial',article:'10.13'},
-            {pagination: '000006', dicolesure:'Partial',article:'10.13'},
-            {pagination: '000006', dicolesure:'Partial',article:'10.13'},
-            {pagination: '000006', dicolesure:'Partial',article:'10.13'},
-            {pagination: '000006', dicolesure:'Partial',article:'10.13'},
-            {pagination: '000006', dicolesure:'Partial',article:'10.13'},
-            {pagination: '000006', dicolesure:'Partial',article:'10.13'},
-            {pagination: '000006', dicolesure:'Partial',article:'10.13'},
-            {pagination: '000006', dicolesure:'Partial',article:'10.13'},
-            {pagination: '000006', dicolesure:'Partial',article:'10.13'},
-            {pagination: '000006', dicolesure:'Partial',article:'10.13'},
-            {pagination: '000006', dicolesure:'Partial',article:'10.13'},
-            {pagination: '000006', dicolesure:'Partial',article:'10.13'},
-            {pagination: '000006', dicolesure:'Partial',article:'10.13'},
-            {pagination: '000006', dicolesure:'Partial',article:'10.13'},
-            {pagination: '000006', dicolesure:'Partial',article:'10.13'},
-
+                {page:1,pagination: '000006', dicolesure:'Partial',article:'10.13', class:'selected'},
+                {page:2,pagination: '000007', dicolesure:'Partial',article:'10', class:''},
+                {page:3,pagination: '000008', dicolesure:'Partial',article:'1',class:''},
+                {page:4,pagination: '000009', dicolesure:'Partial',article:'10.13',class:''},
         ],
-        counter:[{pagination: '000006', dicolesure:'Partial',article:'10.13'},
-            {pagination: '000006', dicolesure:'Partial',article:'10.13'},
-        ],
+      
         show:false,
         showLayerSearch:true,
         showAddInfo:true,
-            
+        numberPage:1
      }
      this.handlShowLayer =this.handlShowLayer.bind(this);
      this.handlShow=this.handlShow.bind(this);
@@ -86,6 +68,70 @@ class DocumentList
             
         }) 
     }
+    onSelectedDoc = (data) =>{
+       
+        let docs = this.state.docs;
+        //Find index of row selected using findIndex method
+        const index = docs.findIndex(function(element,index){
+            return element.id===data
+        });
+        console.log("index",index);
+      
+      //Find index of specific object using findIndex method.    
+        const objIndex = docs.findIndex(function(element,index){
+        return element.class==="selected"});
+
+        //Log object to Console.
+        console.log("Before update: ", docs[objIndex]);
+
+        //Clear class property.
+        docs[objIndex].class = "";
+
+        console.log("After update: ", docs[objIndex]);
+        //set class of row selected
+         console.log(docs[index]);
+                 docs[index].class='selected';
+                
+                 this.setState({
+                     docs:docs
+                 })
+                  
+                  
+                    
+            }
+   
+    handlSlected = (data) =>{
+     
+        let page = this.state.pages;
+        //Finde index of row selected using findIndex method
+        const index = page.findIndex(function(element,index){
+            return element.pagination===data
+        });
+        console.log("index",index);
+      
+      //Find index of specific object using findIndex method.    
+        const objIndex = page.findIndex(function(element,index){
+        return element.class==="selected"});
+
+        //Log object to Console.
+        console.log("Before update: ", page[objIndex]);
+
+        //Clear class property.
+        page[objIndex].class = "";
+
+        console.log("After update: ", page[objIndex]);
+        //set class of row selected
+         console.log(page[index]);
+                 page[index].class='selected';
+                
+                 this.setState({
+                     pages:page,
+                     numberPage:page[index].page
+                 })
+                  
+                  
+                    
+            }
     render() { 
         console.log("taminha da tela",document.documentElement.clientHeight)
         return (
@@ -141,8 +187,8 @@ class DocumentList
                                         </thead>
                                         <tbody>
                                             {/*mapping the document list*/}
-                                            {this.state.rows.map(row => 
-                                                    <tr>
+                                            {this.state.docs.map(row => 
+                                                    <tr onClick={()=>this.onSelectedDoc(row.id)}className={row.class}>
                                                         <td>{row.name}</td>
                                                         <td>{row.dicolesure}</td>
                                                         <td>{row.pages}</td>
@@ -154,7 +200,7 @@ class DocumentList
                                         </div>
                                         </div>
                             {/*===Call the component to show Zone 3 Page liste===*/}
-                         <PageList pagelist={this.state.pages} counter={this.state.counter}/>
+                         <PageList pagelist={this.state.pages} onSelected={this.handlSlected} />
          </div> }
           {/*====End contional to show Zone2 and Zone3====*/}  
             <div class="box box2">
@@ -164,7 +210,7 @@ class DocumentList
                                    <div class="box-flex">
 
                                                 <div class={this.state.showLayerSearch?"box-flex-1":"box-flex-layer-closed"}>
-                                <DocumentEditor showItems={this.state.show} addInfoShow={this.state.showAddInfo} />
+                                <DocumentEditor showItems={this.state.show} addInfoShow={this.state.showAddInfo} numberPage={this.state.numberPage} />
                                                  </div>
                                                  {this.state.showLayerSearch?
                                                  <div class="box-flex-2">

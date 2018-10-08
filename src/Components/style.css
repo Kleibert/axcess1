@@ -195,12 +195,13 @@
 /* css to fixe header from tables document list and page list */
 .table-doc tbody{
     height: 240px;
-   
+    cursor: pointer;
 }
 .table-pag-list tbody{
     height: 300px;
-    
+    cursor: pointer;
 }
+
 .fixed_header{
     width: 100%; 
     border-collapse: collapse;
@@ -238,6 +239,11 @@
 
 .fixed_header td{
     font-size: 0.8em
+}
+
+/* background color for the row selected from table page list*/
+.selected{
+    background-color: rgb(66,66,66);
 }
 /* end css to fixe header from tables document list and page list */
 
