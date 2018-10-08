@@ -167,7 +167,7 @@ a:hover{
 }
 
 
-/* custom select item component DocumentList */
+/*=== Custom select item component DocumentList ===*/
 .select-style{
     border: none;
     -webkit-appearance: none!important;
@@ -193,22 +193,22 @@ a:hover{
     border:none;
     color: #fff
  }
- /* end custom select item */
- /* custom select item component DocumenEditor */
+ /*==== end custom select item ====*/
+ /*==== Custom select item component DocumenEditor ==== */
  .select-style-docEditor{
      margin-top: 3px;
  }
  .select-style-docEditor select{  
     width: 200px;
  }
-  /* end custom select item component DocumenEditor */
+  /* ==== end custom select item component DocumenEditor ==== */
  .row-table{
     
      background:rgb(83,83,83);
   
  }
  
-/* css to fixe header from tables document list and page list */
+/*==== css to fixe header from tables document list and page list =====*/
 .table-doc tbody{
     height: 240px;
     cursor: pointer;
@@ -256,12 +256,12 @@ a:hover{
 .fixed_header td{
     font-size: 0.8em
 }
-
-/* background color for the row selected from table page list*/
+/*==== css to fixe header from tables document list and page list =====*/
+/*==== background color for the row selected from table page list and Document List zone 2 and 3====*/
 .selected{
     background-color: rgb(66,66,66);
 }
-/* end css to fixe header from tables document list and page list */
+/*====End background color for the row selected from table page list and Document List zone 2 and 3====*/
 
 /*===Style component LayerSearch=====*/
 .col-layer{
@@ -412,13 +412,11 @@ a:hover{
 }
 .align-items-bottom{
     position: absolute;
-  
     bottom: 10px;
 }
 
 .align-items-bottom button{
     margin: 5px;
-  
     color:#fff;
     background-color: rgb(66,66,66);
     border: solid 3px rgb(66,66,66);
