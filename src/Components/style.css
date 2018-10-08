@@ -31,7 +31,7 @@ a:hover{
 .box-flex-1{
       min-width: 60%;
       max-width: 95%;
-      flex: 0 0 75%;
+      flex: 0 0 72%;
   }
    /*box to show Zone 4 when Zone 2 and Zone 5 ar closed*/
 .box-flex-layer-closed{
@@ -120,12 +120,12 @@ a:hover{
 .body-doc-style{
     color: #ffff;
     background-color: #000000!important;
-    height: 540px;
+    height: 490px;
     border: solid #333131 0.2px
 }
 /*set style of the docment Editor when Zone6 is closed*/
 .body-doc-style-custom{
-    height: 669px;
+    height: 595px;
     background-color: #ffff;
     background-color: #000000!important;
   
@@ -210,11 +210,11 @@ a:hover{
  
 /*==== css to fixe header from tables document list and page list =====*/
 .table-doc tbody{
-    height: 240px;
+    height: 215px;
     cursor: pointer;
 }
 .table-pag-list tbody{
-    height: 300px;
+    height: 246px;
     cursor: pointer;
 }
 
@@ -278,13 +278,13 @@ a:hover{
 .body-layer{
     background-color:rgb(83,83,83);
     padding: 10px 10px;
-    height: 231px;
+    height: 206px;
     overflow: auto;
     color: #fff
     
 }
 .body-layer-custom{
-    height: 360px!important
+    height: 312px!important
 }
 /*===end Style compenent LayerSearch=====*/
 /*===Custom input text component LayerSearch===*/
@@ -390,9 +390,9 @@ a:hover{
 }
 /*calc the height from additional Information componet */
 .warp-add{
-    height: calc(100% - 620px);
-    height: -webkit-calc(100% - 620px);  /* para Chrome */
-    height: -moz-calc(100% - 620px);
+    height: calc(100% - 582px);
+    height: -webkit-calc(100% - 582px);  /* para Chrome */
+    height: -moz-calc(100% - 582px);
     
 }
 
